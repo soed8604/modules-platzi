@@ -9,7 +9,7 @@ resource "aws_instance" "platzi_instance"{
     security_groups = ["${aws_security_group.ssh_conection.name}"]
 }
 resource "aws_security_group" "ssh_conection" {
-  name        = var.sg_name
+  name = var.sg_name
   dynamic "ingress" {
     for_each = var.ingress_rules
     content {
